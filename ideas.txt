@@ -1,0 +1,12 @@
+1. Book tagging
+-user review/rates books
+-book data aquired through google books api
+-api stores the rating and review with the books id that corresponds to an id in the google books api
+-search through books
+-facebook/twitter integration
+
+2. Restaurant review
+-rate/review visited restaurant
+-
+
+3. 
