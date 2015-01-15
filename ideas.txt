@@ -1,10 +1,28 @@
-1. Book tagging
+NICEbook
 -user review/rates books
--book data aquired through google books api
+-book data aquired through google books api / amazon API
 -api stores the rating and review with the books id that corresponds to an id in the google books api
 -search through books
 -facebook/twitter integration
+-(possible) QR Code ISBN thing?
 
-2. Restaurant review
--rate/review visited restaurant
--
+API/server stuff (Node JS)
+Front end {
+	design {
+		colour palette
+		storyboard
+	}
+	Homepage (html / css)
+	Browse page (html / css / js / angular JS)
+	Add review (html / css / js / angular JS)
+}
+
+bookID String
+bookTitle String
+data Object {
+	rating Int
+	review String
+}
+
+JSON formatted example
+{"bookID":"wrOQLV6xB-wC", "bookTitle":"harry potter", "data": {{"rating" : 7, "review" : "stuff goes here"},{"rating" : 8, "review" : "other stuff goes here"}}
