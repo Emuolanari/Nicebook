@@ -10,6 +10,7 @@ server.use(restify.authorizationParser());
 
 server.listen(8080, function() {
 	console.log('incoming request being handled');
+<<<<<<< HEAD
     
 /*	server.get(/^\/books\/([a-z]+)$/, function(req, res, next) {
         console.log('GET ' + req.params[0]);
@@ -22,6 +23,12 @@ server.listen(8080, function() {
         });
         res.end();
     }); */
+=======
+	server.get(/^\/reviews.(json|xml)/, function(req, res, next) {
+        console.log('/reviews.json');
+        res.end();
+    });
+>>>>>>> aaf5259482926ed795318cd3f61e1ccc79014f87
 	server.put(/^\/reviews\/([a-z]+)$/, function(req, res, next) {
 		console.log('PUT '+req.params[0]);
 		console.log('user: '+JSON.stringify(req.authorization));

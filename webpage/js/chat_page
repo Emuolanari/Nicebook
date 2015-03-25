@@ -1,0 +1,12 @@
+
+facebook login implementation: https://developers.facebook.com/docs/facebook-login/login-flow-for-web/v2.2
+
+https://developers.facebook.com/quickstarts/
+https://developers.facebook.com/docs/javascript
+
+Since we need to do unit testing I cannot write the JS until the API is set up.
+
+
+So when can we setup the api, are we using couch? - nari
+I think this is something to figure out when we have covered it in labs more - Chris
+ok kul

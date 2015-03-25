@@ -1,0 +1,55 @@
+NICEbook
+-user review/rates books
+-book data aquired through google books api / amazon API
+-api stores the rating and review with the books id that corresponds to an id in the google books api
+-search through books
+-facebook/twitter integration
+-(possible) QR Code ISBN thing?
+-books that are reviewed get added to a database
+
+TASKS:
+
+	Pure JS, or JS and Angular?
+	API/server stuff (Node JS)
+	Front end {
+		design {
+			colour palette
+			storyboard
+		}
+		Homepage (html / css)
+		Browse page (html / css / js / angular JS)
+		Add review (html / css / js / angular JS)
+	}
+
+DATA:
+
+	REVIEWS
+	reviewID String
+	bookID String
+	user String (possible integration of google account?, if not just a name field)
+	data Array {
+		rating Int
+		review String
+	}
+
+	JSON formatted example
+	{"bookID":"wrOQLV6xB-wC", "user" : "name" "data": [{"rating" : 7, "review" : "stuff goes here"},{"rating" : 8, "review" : "other stuff goes here"}]}
+	
+	
+	BOOKS
+	bookID String
+	authorID String
+	bookTitle String
+	bookDescription
+	
+	
+	AUTHORS
+	authorID String
+	authorName String
+    
+ 
+facebook login implementation: https://developers.facebook.com/docs/facebook-login/login-flow-for-web/v2.2
+ 
+ 
+Each book should appear with a "wish to read"  button to add to a want to read list
+add favicon
