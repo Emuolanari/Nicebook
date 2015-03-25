@@ -1,0 +1,160 @@
+---
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: NICEbook API
+  description: Use this API to find books you would be interested in and also check the reviews and ratings to help influence your decision.
+schemes: 
+  - http
+consumes:
+  - application/json
+  - text/xml
+produces:
+  - application/json
+  - text/html
+host: liberal-button.codio.io:5984
+basePath: /
+paths:
+  /books:
+    get:
+      parameters:
+          - name: limit
+            in: query
+            description: number of books to return
+            type: integer
+            default: 10
+            minimum: 10
+            maximum: 1000
+      responses:
+        200:
+          description: List of all books
+        404:
+          description: Books not found
+        
+    post:
+      parameters:
+        - name: book
+          in: body
+          description: The book JSON you want to post
+          schema:
+            $ref: '#/definitions/Book'
+      responses:
+        201:
+          description: Added a new book
+        401: 
+          description: Unauthorized action
+  
+  /books/{bookID}:
+    get:
+      parameters:
+        - name: bookID
+          in: path
+          type: string
+          description: the book ID
+        - name: book
+          in: body
+          description: The book JSON you want to get
+          schema:
+            $ref: '#/definitions/Book'
+          required: true  
+      responses:
+        200:
+          description: book details
+        404:
+          description: book not found
+          
+    put:
+      parameters:
+        - name: bookID
+          in: path
+          type: string
+          description: the book ID
+        - name: book
+          in: body
+          description: The book JSON you want to update
+          schema:
+            $ref: '#/definitions/Book'
+          required: true
+      responses:
+        201:
+          description: Updated an existing book
+        401:
+          description: Unauthorized action
+  
+  /books/author/{author}: 
+    get:
+      parameters:
+        - name: author
+          in: path
+          type: string
+          description: the author name you want to get
+      responses:
+        200:
+          description: List of all authors' names
+        404:
+          description: Authors not found
+  
+  /reviews:
+    get:
+      parameters:
+        - name: review
+          in: body
+          description: all book reviews
+          schema:
+            $ref: '#/definitions/Review'
+      responses:
+        200:
+          description: Display reviews on books
+        404:
+          description: reviews not found
+          
+    post:
+      parameters:
+        - name: review
+          in: body
+          description: new book review
+          schema:
+            $ref: '#/definitions/Review'
+      responses:
+        201:
+          description: Added a new review
+        401:
+          description: Unauthorized action
+          
+  /reviews/{bookID}:
+    get:
+      parameters:
+        - name: bookID
+          in: path
+          type: string
+          description: Hello
+      responses:
+        200:
+          description: Display reviews for a particular book
+        404:
+          description: book reviews not found
+    
+ 
+definitions:
+  Book:
+    properties:
+      title:
+        type: string
+      description:
+        type: string
+      author:
+        type: string
+      
+        
+  Review:
+    properties:
+      username:
+        type: string
+      bookID:
+        type: string
+      rating:
+        type: integer
+        format: int32
+      content:
+        type: string
+      
