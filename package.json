@@ -1,0 +1,24 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "NiceBook API",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "servertest.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:pricec9/305_project.git"
+  },
+  "keywords": [
+    "books",
+    "reviews",
+    "api",
+    "nicebook"
+  ],
+  "author": "Emuolanari Osah-Ogulu",
+  "license": "ISC"
+}
